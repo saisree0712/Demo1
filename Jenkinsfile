@@ -4,9 +4,8 @@ stages {
 stage('Checkout') {
 steps {
 // Checkout code from Git repository
-checkout([$class: 'GitSCM',
-branches: [[name: '*/main']], name
-userRemoteConfigs: [[url: 'https:// https://git.iontrading.com/gariman.gupta/2023mt93072_devops ']]])
+checkout scmGit(branches: [[name: '*/main']], extensions: [],
+userRemoteConfigs: [[credentialsId: 'c582966d-0b1f-42cc-bf39-6b73dccc54b8', url: 'https://github.com/saisree0712/Demo1']])
 }
 }
 stage('Build and Compile') {
